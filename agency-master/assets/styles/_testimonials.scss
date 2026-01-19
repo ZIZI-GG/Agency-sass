@@ -1,0 +1,125 @@
+.testimonials-block {
+  @include light-blocks;
+  padding: 50px 0;
+  @media (max-width: $tablet) {
+    padding: 30px 0;
+  }
+  &__subtitle {
+    @include orange-subtitle;
+    text-align: center;
+  }
+  &__title {
+    max-width: 394px;
+    margin: 20px auto;
+    @include title-section;
+    text-align: center;
+    @media (max-width: $tablet) {
+      @include text-title;
+    }
+  }
+  &__button {
+    display: block;
+    margin: 50px auto 0;
+    @include button;
+    @include hover-cursor;
+    color: $text-dark;
+    background: $text-light;
+    box-shadow: 0 3px 9px 0 $shadow-dark;
+    &:hover {
+      color: $text-light;
+      background: $text-dark;
+    }
+    @media (max-width: $tablet) {
+      margin: 30px auto 0;
+    }
+  }
+}
+
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows:
+    minmax(336px, min-content) minmax(64px, min-content) minmax(
+      272px,
+      min-content
+    )
+    minmax(64px, min-content);
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.testimonials-item {
+  padding: 48px;
+  border: 1px solid $orange-light;
+  border-radius: 6px;
+  @media (max-width: $tablet) {
+    padding: 48px 28px;
+  }
+  &__stars {
+    width: 31%;
+    height: 24px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__text {
+    margin: 36px 0;
+    @include text-explanation;
+    color: $text-dark-gray;
+  }
+  &--first {
+    grid-row: 1/3;
+    border-radius: 6px 0 0 0;
+    box-shadow: 0 32px 64px 0 $shadow-light;
+    background-color: $text-light;
+    @media (max-width: 900px) {
+      border-radius: 6px 6px 0 0;
+    }
+  }
+  &--second {
+    grid-row: 1/2;
+    border-radius: 0 6px 0 0;
+    @media (max-width: 900px) {
+      border-radius: 0;
+    }
+  }
+  &--third {
+    grid-row: 3/5;
+    border-radius: 0 0 6px 6px;
+    @media (max-width: 900px) {
+      border-radius: 0;
+    }
+  }
+  &--fourth {
+    grid-row: 2/4;
+    border-radius: 0 0 6px 0;
+    @media (max-width: 900px) {
+      border-radius: 0 0 6px 6px;
+    }
+  }
+}
+
+.testimonials-writer {
+  display: flex;
+  column-gap: 24px;
+  &__icon {
+    width: 80px;
+    height: 80px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__name {
+    margin-top: 9px;
+    @include text-logo;
+    color: $text-dark;
+  }
+  &__company {
+    @include text-explanation;
+    color: $text-dark;
+  }
+}

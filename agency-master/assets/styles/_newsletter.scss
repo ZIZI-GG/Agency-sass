@@ -1,0 +1,51 @@
+.newsletter {
+  @include light-blocks;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  @media (max-width: $mobile) {
+    padding: 30px 0;
+  }
+  &__title {
+    @include text-title;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px 30px;
+    width: 48.7%;
+    @media (max-width: 1100px) {
+      flex-direction: column;
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+  &__email {
+    flex-grow: 1;
+    padding: 9px 16px 7px;
+    @include text-explanation;
+    color: $text-dark-gray;
+    border: 1px solid $orange-light;
+    border-radius: 6px;
+  }
+  &__button {
+    width: 170px;
+    @include button;
+    @include hover-cursor;
+    color: $text-dark;
+    background: $text-light;
+    box-shadow: 0 3px 9px 0 $shadow-dark;
+    &:hover {
+      color: $text-light;
+      background: $text-dark;
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+}

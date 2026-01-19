@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@mixin light-blocks {
+  background-color: $bg-color-light;
+  width: 80%;
+  margin: auto;
+  @media (max-width: $tablet) {
+    width: 85%;
+  }
+  @media (max-width: $mobile) {
+    width: 90%;
+  }
+}
+
+@mixin dark-blocks {
+  background-color: $bg-color-dark;
+  padding: 50px 10%;
+  
+  @media (max-width: $tablet) {
+    padding: 30px 7.5%;
+  }
+  
+  @media (max-width: $mobile) {
+    padding: 20px 5%;
+  }
+}
+
+@mixin font {
+  font-family: $font-family;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin text-h1 {
+  @include font;
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 111%;
+  letter-spacing: -0.03em;
+}
+
+@mixin title-section {
+  @include font;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 114%;
+  letter-spacing: -0.02em;
+  color: $text-dark;
+}
+
+@mixin text-title {
+  @include font;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 120%;
+  color: $text-dark;
+}
+
+@mixin text-logo {
+  @include font;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+@mixin orange-subtitle {
+  @include font;
+  font-size: 16px;
+  line-height: 200%;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: $text-dark-accent;
+}
+
+@mixin text-addition {
+  @include font;
+  font-size: 20px;
+  line-height: 160%;
+  color: $text-dark;
+}
+
+@mixin text-explanation {
+  @include font;
+  font-size: 16px;
+  line-height: 200%;
+  color: $text-light;
+}
+
+@mixin text-sign {
+  @include font;
+  font-size: 14px;
+  line-height: 171%;
+  color: $text-light-gray;
+}
+
+@mixin button {
+  width: 138px;
+  height: 48px;
+  @include font;
+  font-weight: 900;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: $text-light;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+@mixin img-style-fit {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@mixin image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 416px;
+  height: 100%;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @media (max-width: $mobile) {
+    min-height: 200px;
+  }
+}
+
+@mixin hover-cursor {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin link-hover {
+  display: block;
+  transition: transform 1s;
+  &:hover {
+    text-decoration:underline;
+    transform: scale(1.05);
+  }
+}
+
+@mixin main-content-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 50px;
+  background-color: $bg-color-dark;
+  @media (max-width: $tablet) {
+    gap: 20px;
+  }
+  @media (max-width: $mobile) {
+    gap: 15px;
+  }
+  &__title {
+    margin: 0;
+    @include text-h1;
+    text-align: center;
+    color: $text-light;
+    @media (max-width: $mobile) {
+      font-size: 56px;
+      line-height: 114%;
+    }
+  }
+  &__text {
+    width: 570px;
+    @include text-explanation;
+    color: $text-light-gray;
+    text-align: center;
+    @media (max-width: $mobile) {
+      width: 329px;
+    }
+  }
+}
+@mixin flexBox($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
